@@ -4,33 +4,37 @@
 This project is part of the **GTC ML Project 1 - Data Cleaning & Preprocessing Challenge**.  
 The goal is to explore, clean, and preprocess the **Hotel Bookings** dataset to prepare it for further machine learning tasks.
 
-## 📂 Repository Structure
-This repository contains the following files:
+---
 
+## 📂 Repository Structure
 - **`hotel_bookings.csv`** → The raw dataset provided for the project  
 - **`hotel_bookings_cleaned.csv`** → The cleaned dataset after preprocessing  
 - **`hotel_bookings.ipynb`** → Jupyter/Colab Notebook containing all steps:
-  - Exploratory Data Analysis (EDA)
-  - Data Quality Report
-  - Handling Missing Values
-  - Removing Duplicates
-  - Outlier Detection & Treatment
-  - Fixing Data Types
-  - Feature Engineering
-  - Categorical Encoding
-  - Train/Test Split
-- **`README.md`** → Project description and instructions
+  - Exploratory Data Analysis (EDA)  
+  - Data Quality Report  
+  - Handling Missing Values  
+  - Removing Duplicates  
+  - Outlier Detection & Treatment  
+  - Fixing Data Types  
+  - Feature Engineering  
+  - Categorical Encoding  
+  - Train/Test Split  
+- **`README.md`** → Project description and instructions  
+
+---
 
 ## ⚙️ Prerequisites
 - Python 3.x  
 - Google Colab or Jupyter Notebook  
-- Libraries:
+- Libraries:  
   - `pandas`  
   - `numpy`  
   - `matplotlib`  
   - `seaborn`  
   - `missingno`  
-  - `scikit-learn`
+  - `scikit-learn`  
+
+---
 
 ## 🔑 Key Steps
 1. **Exploratory Data Analysis (EDA)**  
@@ -57,6 +61,8 @@ This repository contains the following files:
 5. **Train-Test Split**  
    - 80% training, 20% testing (random_state=42 for reproducibility)  
 
+---
+
 ## 📊 Data Quality Summary
 | Column                 | Missing Values | Missing %  | Outliers Detected | Notes                              |
 |-------------------------|----------------|------------|-------------------|------------------------------------|
@@ -69,16 +75,18 @@ This repository contains the following files:
 | reservation_status_date| 0              | 0%         | -                 | Dropped (data leakage)             |
 | reservation_status     | 0              | 0%         | -                 | Dropped (data leakage)             |
 
-## 🚀 How to Run
-1. Open the notebook in **Google Colab**.  
-2. Upload the dataset using:  
-   ```python
-   from google.colab import files
-   uploaded = files.upload()
+---
 
-📈 Key Insights
-- ADR had extreme outliers (max = 5400), capped at 500.
-- Lead Time had values > 500 days, capped at 365.
-- Most cancellations occur when no deposit is paid.
-- Families (with children/babies) show different booking patterns than solo travelers.
-- Special requests are linked to a lower cancellation rate.
+## 📈 Key Insights
+- **ADR (Average Daily Rate)** contained extreme outliers (maximum value reached 5400).  
+  These were capped at **500** to reduce skewness.  
+
+- **Lead Time** values exceeded 500 days, which is unrealistic in most cases.  
+  These were capped at **365 days**.  
+
+- The majority of booking cancellations occur when **no deposit** is paid.  
+
+- **Families** (bookings including children or babies) demonstrate **different booking behaviors** compared to solo travelers.  
+
+- Guests with **special requests** are less likely to cancel, indicating a correlation between engagement and booking reliability.
+
