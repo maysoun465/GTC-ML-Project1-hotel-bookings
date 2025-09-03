@@ -9,7 +9,6 @@ This repository contains the following files:
 
 - **`hotel_bookings.csv`** → The raw dataset provided for the project  
 - **`hotel_bookings_cleaned.csv`** → The cleaned dataset after preprocessing  
-- **`hotel_bookings_encoded.csv`** → The fully preprocessed dataset (after feature engineering & encoding)  
 - **`hotel_bookings.ipynb`** → Jupyter/Colab Notebook containing all steps:
   - Exploratory Data Analysis (EDA)
   - Data Quality Report
@@ -20,7 +19,18 @@ This repository contains the following files:
   - Feature Engineering
   - Categorical Encoding
   - Train/Test Split
-- **`README.md`** → Project description and instructions  
+- **`README.md`** → Project description and instructions
+
+## ⚙️ Prerequisites
+- Python 3.x  
+- Google Colab or Jupyter Notebook  
+- Libraries:
+  - `pandas`  
+  - `numpy`  
+  - `matplotlib`  
+  - `seaborn`  
+  - `missingno`  
+  - `scikit-learn`
 
 ## 🔑 Key Steps
 1. **Exploratory Data Analysis (EDA)**  
@@ -65,3 +75,10 @@ This repository contains the following files:
    ```python
    from google.colab import files
    uploaded = files.upload()
+
+📈 Key Insights
+- ADR had extreme outliers (max = 5400), capped at 500.
+- Lead Time had values > 500 days, capped at 365.
+- Most cancellations occur when no deposit is paid.
+- Families (with children/babies) show different booking patterns than solo travelers.
+- Special requests are linked to a lower cancellation rate.
