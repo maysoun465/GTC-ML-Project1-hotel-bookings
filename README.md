@@ -1,4 +1,3 @@
-# GTC-ML-Project1-hotel-bookings
 # GTC ML Project 1 - Hotel Bookings (Data Cleaning & Preprocessing)
 
 ## 📌 Project Overview
